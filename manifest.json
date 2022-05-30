@@ -3,7 +3,7 @@
     "background_color": "#99bbff",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/index.php",
+    "start_url": "http://toolbox/index.php",
     "name": "Toolbox",
     "short_name": "Toolbox",
     "description": "The best tools manager",
