@@ -125,20 +125,20 @@ a:link
 ?>
 <?php while ($donnees = $reponse->fetch()) {
 ?>
-<?php if($_SESSION['langue'] =='fr')  {
+<?php if($_SESSION['langue'] =='en')  {
 
 ?>
 <div class="col-sm-12 boiteDesign" onclick="enregistrerClickBoite(this)" id="<?php echo $donnees['id_boite']; ?>">
-  <center><h1 id="boite" style="font-family: 'Oswald', sans-serif;display: inline;"> Boite </h1><h1 style="font-family: 'Oswald', sans-serif;display: inline;"> <?php echo $donnees['nom']; ?></h1></center>
+  <center><h1 id="boite" style="font-family: 'Oswald', sans-serif;display: inline;"> Box </h1><h1 style="font-family: 'Oswald', sans-serif;display: inline;"> <?php echo $donnees['nom']; ?></h1></center>
 </div>
 
 <?php
 } 
-if($_SESSION['langue']=='en'){
+else{
 
 ?>
 <div class="col-sm-12 boiteDesign" onclick="enregistrerClickBoite(this)" id="<?php echo $donnees['id_boite']; ?>">
-  <center><h1 id="boite" style="font-family: 'Oswald', sans-serif;display: inline;"> Box</h1><h1 style="font-family: 'Oswald', sans-serif;display: inline;"> <?php echo $donnees['nom']; ?></h1></center>
+  <center><h1 id="boite" style="font-family: 'Oswald', sans-serif;display: inline;"> Boite</h1><h1 style="font-family: 'Oswald', sans-serif;display: inline;"> <?php echo $donnees['nom']; ?></h1></center>
 </div>
 <?php
 }
