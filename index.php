@@ -119,7 +119,7 @@ else {
 
 <center>
 <div class="col-sm-10 col-lg-8">
-<h1 style="font-family: 'Oswald', sans-serif;"> Bienvenue ssur ToolBox ! </h1>
+<h1 style="font-family: 'Oswald', sans-serif;"> Bienvenue sur ToolBox ! </h1>
 <p style="font-family: 'Open Sans', sans-serif;"> Connectez vous pour commencer !</p>
 </div>
 </center>

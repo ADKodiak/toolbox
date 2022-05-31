@@ -4,7 +4,7 @@ var deferredPrompt;
 if (!window.Promise) {
   window.Promise = Promise;
 }
-alert("cc");
+
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('http://localhost/toolbox/sw.js')

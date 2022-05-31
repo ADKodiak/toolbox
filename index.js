@@ -115,7 +115,7 @@ function francais_par() {
 	document.getElementById("paraa").innerHTML = "Paramètres";
 	document.getElementById("lang").innerHTML = "Langues";
 	document.getElementById("fra").innerHTML = "Français";
-	document.getElementById("eng").innerHTML = "Englais";
+	document.getElementById("eng").innerHTML = "Anglais";
 	document.getElementById("val").innerHTML = "Valider";
 	
 		
