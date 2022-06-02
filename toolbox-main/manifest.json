@@ -1,0 +1,32 @@
+{
+    "theme_color": "#ff66b3",
+    "background_color": "#99bbff",
+    "display": "standalone",
+    "scope": "https://revastic.com/",
+    "start_url": "https://revastic.com/",
+    "name": "Toolbox",
+    "short_name": "Toolbox",
+    "description": "The best tools manager",
+    "icons": [
+        {
+            "src": "https://revastic.com/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://revastic.com/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "https://revastic.com/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "https://revastic.com/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
