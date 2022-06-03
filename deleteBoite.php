@@ -1,5 +1,10 @@
 <?php session_start() ?>
 <?php
+
+
+
+
+
 if(isset($_SESSION['id'])){
 
  try
@@ -13,12 +18,13 @@ if(isset($_SESSION['id'])){
 
 
 
-if(isset($_POST['idDeLOutilDelete'])){
-$deleteIdd = htmlspecialchars($_POST['idDeLOutilDelete']);
+if(isset($_POST['idDeBoiteDelete'])){
+
+$deleteIdd = htmlspecialchars($_POST['idDeBoiteDelete']);
+echo $deleteIdd;
 
 
-
-$req = $bdd->prepare('DELETE FROM outils WHERE id_outils = :deleteId');
+$req = $bdd->prepare('DELETE FROM boite WHERE id_boite = :deleteId');
 $valid = $req->execute(array(
     'deleteId' => $deleteIdd
 
@@ -26,13 +32,14 @@ $valid = $req->execute(array(
 
 
     )); 
-
-$bdd->query('ALTER TABLE outils AUTO_INCREMENT=0');
+echo $valid;
+echo "test";
+$bdd->query('ALTER TABLE boite AUTO_INCREMENT=0');
 
 }
 
 }
 
-header('Location: detailsBoite.php?valid='.$valid); 
+//header('Location: boite.php?valid='.$valid); 
 
  ?>

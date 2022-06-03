@@ -149,6 +149,10 @@ function deleteOutilss(){
 
   //document.getElementById("nomOutils").value = "test";
 }
+function deleteBoitee() {
+    
+    document.deleteBoite.submit(); 
+}
 function affDetailsOutils(temp){
   
   var stockClick = temp.id;

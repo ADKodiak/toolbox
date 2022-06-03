@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href=" http://localhost/toolbox/manifest.json">
+    <link rel="manifest" href="https://revastic.com/manifest.json">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,9 +19,9 @@
     <title>ToolBox</title>
 </head>
 <body>
-<script src="http://localhost/toolbox/js/app.js"></script>
- <script src="http://localhost/toolbox/js/promise.js"></script>
- <script src="http://localhost/toolbox/js/fetch.js"></script>
+<script src="https://revastic.com/js/app.js"></script>
+ <script src="https://revastic.com/js/promise.js"></script>
+ <script src="https://revastic.com/js/fetch.js"></script>
  
 <script src="index.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -46,7 +46,7 @@
 <div class="container-fluid align-items-center"> 
     
 
-	<h1 class="text-center" style="margin-top:20px" id="paraa"> Paramètres <img src="Images/gear.png" width="60px" height="60px"> </h1>
+	<h1 class="text-center" style="margin-top:20px" id="paraa"> Paramètres <img src="images/gear.png" width="60px" height="60px"> </h1>
    
  
    
@@ -54,17 +54,16 @@
          <legend id="lang"class="text-center"> LANGUES :</legend>
 		 <div class="container align-items-center">
 		 <p id="fra"class="text-center">Francais</p>
-		 <p class="text-center"> <img class="center" src="Images/france.png" style="margin-left:auto;margin-right:auto;cursor: pointer;" width="50px" height="50px" onclick="francais()"> 
+		 <p class="text-center"> <img class="center" src="images/france.png" style="margin-left:auto;margin-right:auto;cursor: pointer;" width="50px" height="50px" onclick="francais()"> 
          </p>
 		 </div>
 		 <div class="container align-items-center">
 		   <p id="eng"class="text-center">Anglais</p>
-		 <p class="text-center"><img src="Images/uk.png" width="50px" height="50px" onclick="anglais()" style="cursor: pointer;"> 
+		 <p class="text-center"><img src="images/uk.png" width="50px" height="50px" onclick="anglais()" style="cursor: pointer;"> 
          </p>
 		 </div>
 		</div>
-        <p style="opacity: 0;">ggggggggggggggggggggggggggggggggggggggggggg</p>
-        <div class="text-center" >  <button id="val" type="submit" class="btn btn-primary">Valider</button></div>
+      
 
     </form>
     

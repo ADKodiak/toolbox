@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="manifest" href=" http://localhost/toolbox/manifest.json">
+  <link rel="manifest" href=" https://revastic.com/manifest.json">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,9 +23,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
  
-  <script src="http://localhost/toolbox/js/app.js"></script>
- <script src="http://localhost/toolbox/js/promise.js"></script>
- <script src="http://localhost/toolbox/js/fetch.js"></script>
+  <script src="https://revastic.com/js/app.js"></script>
+ <script src="https://revastic.com/js/promise.js"></script>
+ <script src="https://revastic.com/js/fetch.js"></script>
  
 
 
@@ -107,24 +107,11 @@ if ($isPasswordCorrect) {
 <?php 
 }
 
-else {
-
-
+else 
+  {
+    include("notConnectedUI.php");
+  } 
 
 ?>
-
-<center>
-<div class="d-flex justify-content-center col-lg-5 col-sm-12" style="margin-top: 5vh;"><img src="images/toolbox_0.png" width="100%"></div>
-</center>
-
-<center>
-<div class="col-sm-10 col-lg-8">
-<h1 style="font-family: 'Oswald', sans-serif;"> Bienvenue sur ToolBox ! </h1>
-<p style="font-family: 'Open Sans', sans-serif;"> Connectez vous pour commencer !</p>
-</div>
-</center>
-
-
-<?php  } ?>
 </body>
 </html>

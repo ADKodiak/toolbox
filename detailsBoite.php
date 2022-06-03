@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href=" http://localhost/toolbox/manifest.json">
+    <link rel="manifest" href=" https://revastic.com/manifest.json">
 
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo 'css.css?='.time(); ?>"/>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,9 +18,9 @@
 	<title>ToolBox</title>
 </head>
 <body>
-<script src="http://localhost/toolbox/js/app.js"></script>
- <script src="http://localhost/toolbox/js/promise.js"></script>
- <script src="http://localhost/toolbox/js/fetch.js"></script>
+<script src="https://revastic.com/js/app.js"></script>
+ <script src="https://revastic.com/js/promise.js"></script>
+ <script src="https://revastic.com/js/fetch.js"></script>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -52,9 +52,15 @@
       $reponse = $bdd->query("SELECT * FROM boite WHERE id_boite =  '$id_boite'"); 
       $donnees = $reponse->fetch()
 ?>
+<form method="post" action="deleteBoite.php" name="deleteBoite">
+    <input type="hidden" name="idDeBoiteDelete" id="idDeBoiteDelete">
+</form>
 
 
-<div class="iconAddOutils" onclick="addOutils()"><img src="images/wrench.png" width="30vh"></div>
+<div class="iconAddOutils">
+    <img src="images/wrench.png" width="30vh" onclick="addOutils()">
+    <img src="images/delete.png" width="30vh" onclick="deleteBoitee()" style="margin-left: 5vh;">
+</div>
 <center><h1 id="titreBoite" class="boiteStyle" ><?php echo strtoupper ( $donnees['nom'] );  ?></h1></center>
 <br>
 <?php 
@@ -103,7 +109,7 @@
 
 <div id="popup1" class="overlay">
     <div class="popup">
-        <div style="display: flex; justify-content: center; flex-direction: row;"><h2 style="margin-right: 2vh;">Parfait</h2><img src="Images/valid.png" width="50vh "></div>
+        <div style="display: flex; justify-content: center; flex-direction: row;"><h2 style="margin-right: 2vh;">Parfait</h2><img src="images/valid.png" width="50vh "></div>
         <a class="close" href="#">&times;</a>
         <div class="content">
            <center>L'outils a bien été supprimé  !</center> 
@@ -118,7 +124,7 @@
 
 <div id="popup2" class="overlay">
     <div class="popup">
-        <div style="display: flex; justify-content: center; flex-direction: row;"><h2 style="margin-right: 2vh;">Erreur</h2><img src="Images/error-message.png" width="7.5%"></div>
+        <div style="display: flex; justify-content: center; flex-direction: row;"><h2 style="margin-right: 2vh;">Erreur</h2><img src="images/error-message.png" width="7.5%"></div>
         <a class="close" href="#">&times;</a>
         <div class="content">
             Une erreur c'est produite, veuillez réessayer plus tard  !
@@ -145,6 +151,20 @@ document.getElementById('popup1Click').click();
 else{
    document.getElementById('popup2Click').click();
 } 
+
+
+
+
+</script>
+<script type="text/javascript">
+    
+
+
+    temp = getCookie("id_boite");
+    
+
+    document.getElementById("idDeBoiteDelete").value = temp;
+
 
 
 </script>

@@ -3,7 +3,7 @@
     
             try
 {
-                $bdd = new PDO('mysql:host=localhost;dbname=outils;charset=utf8', 'root', '');
+                $bdd = new PDO('mysql:host=kyamobepqearthur.mysql.db;dbname=kyamobepqearthur;charset=utf8', 'kyamobepqearthur', 'Timon1999');
                 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
             catch(Exception $e)

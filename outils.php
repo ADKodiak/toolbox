@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href=" http://localhost/toolbox/manifest.json">
+    <link rel="manifest" href="https://revastic.com/manifest.json">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,9 +18,9 @@
     <title>ToolBox</title>
 </head>
 <body>
-<script src="http://localhost/toolbox/js/app.js"></script>
- <script src="http://localhost/toolbox/js/promise.js"></script>
- <script src="http://localhost/toolbox/js/fetch.js"></script>
+<script src="https://revastic.com/js/app.js"></script>
+ <script src="https://revastic.com/js/promise.js"></script>
+ <script src="https://revastic.com/js/fetch.js"></script>
   <script type="text/javascript" src="index.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     
@@ -120,7 +120,7 @@ else{
         <div class="iconAddOutils" onclick="addOutils()"><img src="images/wrench.png" width="30vh"></div>
       </span>
 
-<section class="sectionOutil" id="sectionOutil1">
+<section class="sectionOutil" id="sectionOutils1">
 
 
 
@@ -132,9 +132,10 @@ else{
         else{
           $typeorder = "fonction";
         }
+        
      
        $id_cet=$_SESSION['id'];
-       $rep= $bdd->query("SELECT DISTINCT outils.* FROM outils JOIN boite ON boite.id_boite=outils.id_boite JOIN posseder ON posseder.id_boite=boite.id_boite JOIN utilisateur ON posseder.id_utilisateur=utilisateur.id_utilisateur WHERE utilisateur.id_utilisateur=$id_cet ORDER BY $typeorder" ); // Permet d'afficher le tableau avec les différents outils
+       $rep= $bdd->query("SELECT DISTINCT outils.*, boite.* FROM outils JOIN boite ON boite.id_boite=outils.id_boite JOIN posseder ON posseder.id_boite=boite.id_boite JOIN utilisateur ON posseder.id_utilisateur=utilisateur.id_utilisateur WHERE utilisateur.id_utilisateur=$id_cet ORDER BY $typeorder" ); // Permet d'afficher le tableau avec les différents outils
       
      ?>
  
@@ -166,7 +167,7 @@ else{
            <td><?php echo $outils ['fonction']; ?></td>
            <td><?php echo $outils ['marque']; ?></td>
            <td><?php echo $outils['etat']; ?></td>
-           <td><?php echo $outils['id_boite']; ?></td> 
+           <td><?php echo $outils['nom']; ?></td> 
            <td><?php echo $outils['quantite']; ?></td>                                       
           </tr>
         <?php } ?>
@@ -194,21 +195,11 @@ else{
      <?php
    }
  }
-?>
-<?php }
+ }
 
-else{ ?>
-<center>
-<div class="d-flex justify-content-center col-lg-5 col-sm-12" style="margin-top: 5vh;"><img src="images/toolbox_0.png" width="100%"></div>
-</center>
-
-<center>
-<div class="col-sm-10 col-lg-8">
-<h1 style="font-family: 'Oswald', sans-serif;"> Bienvenue sur ToolBox ! </h1>
-<p style="font-family: 'Open Sans', sans-serif;"> Connectez vous pour commencer !</p>
-</div>
-</center>
-<?php } ?>
+else{ 
+include("notConnectedUI.php");
+ } ?>
 <script src="js.js"></script>
 <script src="index.js"></script>
 </body>

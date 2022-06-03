@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="manifest" href=" http://localhost/toolbox/manifest.json">
+  <link rel="manifest" href=" https://revastic.com/manifest.json">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,9 +18,9 @@
 	<title>ToolBox</title>
 </head>
 <body>
-<script src="http://localhost/toolbox/js/app.js"></script>
- <script src="http://localhost/toolbox/js/promise.js"></script>
- <script src="http://localhost/toolbox/js/fetch.js"></script>
+<script src="https://revastic.com/js/app.js"></script>
+ <script src="https://revastic.com/js/promise.js"></script>
+ <script src="https://revastic.com/js/fetch.js"></script>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     
@@ -118,27 +118,26 @@ a:link
 
 <div id="divBoite">
 <?php // Condition a mettre ici pour vérifier si il ya des boites
+  $id_cet = $_SESSION['id'];
 
 
+            $reponse = $bdd->query("SELECT boite.* FROM boite JOIN posseder ON posseder.id_boite=boite.id_boite JOIN utilisateur ON posseder.id_utilisateur=utilisateur.id_utilisateur WHERE utilisateur.id_utilisateur=$id_cet" ); 
+ while ($donnees = $reponse->fetch()) {
 
-            $reponse = $bdd->query("SELECT * FROM boite" ); 
-?>
-<?php while ($donnees = $reponse->fetch()) {
-?>
-<?php if($_SESSION['langue'] =='en')  {
+ if($_SESSION['langue'] =='fr' || $_SESSION['langue'] == NULL)  {
 
 ?>
 <div class="col-sm-12 boiteDesign" onclick="enregistrerClickBoite(this)" id="<?php echo $donnees['id_boite']; ?>">
-  <center><h1 id="boite" style="font-family: 'Oswald', sans-serif;display: inline;"> Box </h1><h1 style="font-family: 'Oswald', sans-serif;display: inline;"> <?php echo $donnees['nom']; ?></h1></center>
+  <center><h1 id="boite" style="font-family: 'Oswald', sans-serif;display: inline;"> Boite </h1><h1 style="font-family: 'Oswald', sans-serif;display: inline;"> <?php echo $donnees['nom']; ?></h1></center>
 </div>
 
 <?php
 } 
-else{
+if($_SESSION['langue']=='en'){
 
 ?>
 <div class="col-sm-12 boiteDesign" onclick="enregistrerClickBoite(this)" id="<?php echo $donnees['id_boite']; ?>">
-  <center><h1 id="boite" style="font-family: 'Oswald', sans-serif;display: inline;"> Boite</h1><h1 style="font-family: 'Oswald', sans-serif;display: inline;"> <?php echo $donnees['nom']; ?></h1></center>
+  <center><h1 id="boite" style="font-family: 'Oswald', sans-serif;display: inline;"> Box</h1><h1 style="font-family: 'Oswald', sans-serif;display: inline;"> <?php echo $donnees['nom']; ?></h1></center>
 </div>
 <?php
 }
@@ -167,25 +166,12 @@ else{
      <?php
    }
  }
+ }
+else
+{ 
+    include("notConnectedUI.php");
+} 
 ?>
-
-
-
-
-<?php }
-else{ ?>
-<center>
-<div class="d-flex justify-content-center col-lg-5 col-sm-12" style="margin-top: 5vh;"><img src="images/toolbox_0.png" width="100%"></div>
-</center>
-
-<center>
-<div class="col-sm-10 col-lg-8">
-<h1 style="font-family: 'Oswald', sans-serif;"> Bienvenue sur ToolBox ! </h1>
-<p style="font-family: 'Open Sans', sans-serif;"> Connectez vous pour commencer !</p>
-</div>
-</center>
-
-<?php } ?>
 <script src="js.js"></script>
 </body>
 </html>

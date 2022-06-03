@@ -7,7 +7,7 @@ if (!window.Promise) {
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('http://localhost/toolbox/sw.js')
+    .register('https://revastic.com/sw.js')
     .then(function () {
       console.log('Service worker registered!');
     })

@@ -1,10 +1,14 @@
 <?php session_start() ?>
 <?php
 if(isset($_SESSION['id'])){
-header('Location: detailsBoite.php'); 
+
+
+
+
+
  try
 {
-                $bdd = new PDO('mysql:host=localhost;dbname=outils;charset=utf8', 'root', '');
+                $bdd = new PDO('mysql:host=kyamobepqearthur.mysql.db;dbname=kyamobepqearthur;charset=utf8', 'kyamobepqearthur', 'Timon1999');
 }
             catch(Exception $e)
 {
@@ -23,6 +27,7 @@ $etat = null;
 $quantite = 1;
 $photo = null;
 $fichier = null;
+$id_boite = htmlspecialchars($_POST['id_boite']);
 
 if(isset($_POST['name']) && $_POST['name'] !== ""){
     $fonction = htmlspecialchars($_POST['name']);    
@@ -49,11 +54,22 @@ if(isset($_POST['quantite']) && $_POST['quantite'] !== ""){
 if(isset($_POST['photo']) && $_POST['photo'] !== ""){
     $photo = htmlspecialchars($_POST['photo']);
 } 
-$id_boite = htmlspecialchars($_POST['id_boite']);
+if(isset($_POST['boite']) && $_POST['boite'] !== ""){
+    $id_boite = htmlspecialchars($_POST['boite']);
+    header('Location: outils.php'); 
+} 
+else{
+    header('Location: detailsBoite.php'); 
+}
 
-echo $date_achat;
 
-/*
+
+
+
+
+
+
+
 
 // Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
 if (isset($_FILES['fichier']) && $_FILES['fichier']['error'] == 0)
@@ -75,12 +91,12 @@ if (isset($_FILES['fichier']) && $_FILES['fichier']['error'] == 0)
         }
 }
 
-*/
 
 
 
 
-echo "test";
+
+
 
 $req = $bdd->prepare('INSERT INTO outils(fonction, marque, garantie, date_achat, description, etat, id_boite, quantite,photo,fichier) VALUES(:fonction, :marque, :garantie, :date_achat, :description, :etat, :id_boite, :quantite,:photo,:fichier)');
 
@@ -98,9 +114,10 @@ $req->execute(array(
     )); 
 
 
- 
 
-} }
+} 
+
+}
 
 
 
