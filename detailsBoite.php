@@ -80,8 +80,15 @@
 
          ?>
          <p class="text-center"style="color: black;" onclick="affDetailsOutils(this)" id="<?php echo $donnees['id_outils'];  ?>"><b id="b_outils">Tools :</b> <?php echo $donnees['fonction'];  ?> <p>
-     <?php } ?>
      <?php } 
+
+     if($_SESSION['langue'] =='fr')  {
+
+?>
+<p class="text-center"style="color: black;" onclick="affDetailsOutils(this)" id="<?php echo $donnees['id_outils'];  ?>"><b id="b_outils">Outils :</b> <?php echo $donnees['fonction'];  ?> <p>
+<?php } ?>
+     <?php } 
+
       else{
      ?>
     <p class="text-center"style="color: black;" onclick="affDetailsOutils(this)" id="<?php echo $donnees['id_outils'];  ?>"><b id="b_outils">Outils:</b> <?php echo $donnees['fonction'];  ?> <p>
