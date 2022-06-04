@@ -124,20 +124,20 @@ a:link
             $reponse = $bdd->query("SELECT boite.* FROM boite JOIN posseder ON posseder.id_boite=boite.id_boite JOIN utilisateur ON posseder.id_utilisateur=utilisateur.id_utilisateur WHERE utilisateur.id_utilisateur=$id_cet" ); 
  while ($donnees = $reponse->fetch()) {
 
- if($_SESSION['langue'] =='fr' || $_SESSION['langue'] == NULL)  {
+ if($_SESSION['langue'] =='en' )  {
 
 ?>
 <div class="col-sm-12 boiteDesign" onclick="enregistrerClickBoite(this)" id="<?php echo $donnees['id_boite']; ?>">
-  <center><h1 id="boite" style="font-family: 'Oswald', sans-serif;display: inline;"> Boite </h1><h1 style="font-family: 'Oswald', sans-serif;display: inline;"> <?php echo $donnees['nom']; ?></h1></center>
+  <center><h1 id="boite" style="font-family: 'Oswald', sans-serif;display: inline;"> Box </h1><h1 style="font-family: 'Oswald', sans-serif;display: inline;"> <?php echo $donnees['nom']; ?></h1></center>
 </div>
 
 <?php
 } 
-if($_SESSION['langue']=='en'){
+else{
 
 ?>
 <div class="col-sm-12 boiteDesign" onclick="enregistrerClickBoite(this)" id="<?php echo $donnees['id_boite']; ?>">
-  <center><h1 id="boite" style="font-family: 'Oswald', sans-serif;display: inline;"> Box</h1><h1 style="font-family: 'Oswald', sans-serif;display: inline;"> <?php echo $donnees['nom']; ?></h1></center>
+  <center><h1 id="boite" style="font-family: 'Oswald', sans-serif;display: inline;"> Boite </h1><h1 style="font-family: 'Oswald', sans-serif;display: inline;"> <?php echo $donnees['nom']; ?></h1></center>
 </div>
 <?php
 }
