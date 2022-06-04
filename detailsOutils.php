@@ -41,7 +41,23 @@
     <input type="hidden" name="idDeLOutilDelete" id="idDeLOutilDelete">
 </form>
 
+<?php if(isset($_SESSION['langue'])){
+    ?><p id="langueDeBase" style="display: none"><?php echo $_SESSION['langue']; ?> </p><?php
+ if($_SESSION['langue'] =='fr')  {
 
+     ?>
+     <script>francais_do();</script>
+
+     <?php
+   } 
+   if($_SESSION['langue']=='en'){
+
+     ?>
+     <script>anglais_do();</script>
+     <?php
+   }
+ }
+?>
 
 
 
