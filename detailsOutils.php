@@ -147,6 +147,33 @@
 			<?php
    }
  }
+			      else{
+		?>
+
+	
+
+			<p class="detailOutilText" onclick="affDetailsOutils(this)"><b  id="b_nom">Nom : </b><?php echo $donnees['fonction'];  ?> </p>
+			<p class="detailOutilText" onclick="affDetailsOutils(this)"><b  id="b_marque">Marque : </b><?php echo $donnees['marque'];  ?> </p>
+			<p class="detailOutilText" onclick="affDetailsOutils(this)"><b  id="b_garantie">Garantie : </b><?php echo $donnees['garantie'];  ?> </p>
+			<p class="detailOutilText" onclick="affDetailsOutils(this)"><b  id="b_date">Date d'achat :</b> <?php echo $donnees['date_achat'];  ?> </p>
+			<p class="detailOutilText" onclick="affDetailsOutils(this)"><b  id="b_desc">Description :</b> <?php echo $donnees['description'];  ?> </p>
+			<p class="detailOutilText" onclick="affDetailsOutils(this)"><b  id="b_etat">Etat :</b> <?php echo $donnees['etat'];  ?> </p>
+			<p class="detailOutilText" onclick="affDetailsOutils(this)"><b  id="b_q">Quantitée : </b><?php echo $donnees['quantite'];  ?> </p>
+			<p class="detailOutilText" onclick="affDetailsOutils(this)"><b  id="b_ph">Photo URL : </b></p>
+			<?php if($donnees['photo'] != ""){ ?>
+			<img src="<?php echo $donnees['photo'];  ?>" width="200px" >
+			<?php } else{?>
+				<p> Aucune</p>
+			<?php }?>
+			<p class="detailOutilText" onclick="affDetailsOutils(this)"><b  id="b_f">Photo fichier: </b></p>
+			<?php if($donnees['fichier'] != ""){ ?>
+			<img src="<?php echo $donnees['fichier'];  ?>" width="200px" >
+			<?php } else{?>
+				<p  id="b_r"> Aucune</p>
+			<?php }?>
+
+			<?php
+   }
 ?>
 
 
