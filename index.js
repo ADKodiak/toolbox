@@ -211,38 +211,56 @@ function anglais_outil() {
 function francais_do() {
 	
 
-	//details outils 
-		document.getElementById("b_nom").innerHTML = "Nom";
-		document.getElementById("b_marque").innerHTML = "Marque";
-		document.getElementById("b_garantie").innerHTML = "Garantie";
-		document.getElementById("b_etat").innerHTML = "Etat";
+	document.getElementById("aj_nom").innerHTML = "Nom";
+	document.getElementById("aj_marque").innerHTML = "Marque";
+	document.getElementById("aj_garantie").innerHTML = "Garantie";
+	document.getElementById("aj_etat").innerHTML = "Etat";
+
+	document.getElementById("aj_date").innerHTML = "Date d'achat";
+	document.getElementById("aj_q").innerHTML = "Quantitée";
+	document.getElementById("aj_photo").innerHTML = "Photo";
+
+	document.getElementById("aj_des").innerHTML = "Description complémentaire";
+	//edit 
 	
-		document.getElementById("b_date").innerHTML = "Date d'achat ";
-		document.getElementById("b_q").innerHTML = "Quantités";
-		document.getElementById("b_ph").innerHTML = "Photo";
-		document.getElementById("b_f").innerHTML = "Fichier";
-		document.getElementById("b_desc").innerHTML = "Description ";
-		document.getElementById("b_r").innerHTML = "Aucune ";
+
+	document.getElementById("nomOutils").placeholder = "Entrez le nom de votre outils *";
+	document.getElementById("marque").placeholder = "Entrez la marque de votre outils";
+	document.getElementById("garantie").placeholder = "Date de validité de la garantie";
+	document.getElementById("dateAchat").placeholder = "Entrez la date d'achat ici";
+	document.getElementById("quantite").placeholder = "Quantité ";
+	document.getElementById("photo").placeholder = "URL photo ";
 	
-		
+	document.getElementById("valid").value = "Valid";
+
+
 	
 			
 	}
 function anglais_do() {
 	
+	document.getElementById("aj_nom").innerHTML = "Name";
+	document.getElementById("aj_marque").innerHTML = "Brand";
+	document.getElementById("aj_garantie").innerHTML = "Guarantee";
+	document.getElementById("aj_etat").innerHTML = "State";
 
-//details outils 
-	document.getElementById("b_nom").innerHTML = "Name";
-	document.getElementById("b_marque").innerHTML = "Brand";
-	document.getElementById("b_garantie").innerHTML = "Guarantee";
-	document.getElementById("b_etat").innerHTML = "State";
+	document.getElementById("aj_date").innerHTML = "Date of purchase ";
+	document.getElementById("aj_q").innerHTML = "Quantity";
+	document.getElementById("aj_photo").innerHTML = "Picture";
+	document.getElementById("aj_f").innerHTML = "File";
+	document.getElementById("aj_des").innerHTML = "Additional Description ";
 
-	document.getElementById("b_date").innerHTML = "Date of purchase ";
-	document.getElementById("b_q").innerHTML = "Quantity";
-	document.getElementById("b_ph").innerHTML = "Picture";
-	document.getElementById("b_f").innerHTML = "File";
-	document.getElementById("b_desc").innerHTML = "Additional Description ";
-	document.getElementById("b_r").innerHTML = "None ";
+
+	//edit
+
+	document.getElementById("nomOutils").placeholder = "Enter the name of your tool *";
+	document.getElementById("marque").placeholder = "Enter the brand of your tool";
+	document.getElementById("garantie").placeholder = "Date of validity of the warranty";
+	document.getElementById("dateAchat").placeholder = "Enter the date of purchase here";
+	document.getElementById("quantite").placeholder = "Quantity ";
+	document.getElementById("photo").placeholder = "Photo URL ";
+
+	document.getElementById("valid").value = "Validate";
 
 	
 
