@@ -73,7 +73,7 @@ self.addEventListener('fetch', function(event)
       );   
    }
    else{ 
-      if (event.request.url.startsWith('http')){ // vérifie que ce n'est pas une extension. 
+      if (event.request.url.startsWith('https')){ // vérifie que ce n'est pas une extension. 
      
   event.respondWith(
       caches.match(event.request)
